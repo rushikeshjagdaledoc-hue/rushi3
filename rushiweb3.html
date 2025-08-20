@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushikesh Jagdale | Trusted Financial Advisor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        navy: '#0F172A',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.25);
+        }
+        .testimonial-slide {
+            transition: all 0.5s ease;
+        }
+        .active-slide {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .next-slide {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        .prev-slide {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-serif font-bold text-navy">Rushikesh Jagdale</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-navy hover:text-gold transition">About</a>
+                    <a href="#services" class="text-navy hover:text-gold transition">Services</a>
+                    <a href="#why-me" class="text-navy hover:text-gold transition">Why Me</a>
+                    <a href="#testimonials" class="text-navy hover:text-gold transition">Testimonials</a>
+                    <a href="#contact" class="text-navy hover:text-gold transition">Contact</a>
+                    <a href="https://wa.me/message/PS5MVRQPOOK2D1" target="_blank" class="bg-gold text-navy px-4 py-2 rounded hover:bg-opacity-90 transition">Book Consultation</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-navy focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-4 shadow-lg">
+            <a href="#about" class="block py-2 text-navy hover:text-gold">About</a>
+            <a href="#services" class="block py-2 text-navy hover:text-gold">Services</a>
+            <a href="#why-me" class="block py-2 text-navy hover:text-gold">Why Me</a>
+            <a href="#testimonials" class="block py-2 text-navy hover:text-gold">Testimonials</a>
+            <a href="#contact" class="block py-2 text-navy hover:text-gold">Contact</a>
+            <a href="https://wa.me/message/PS5MVRQPOOK2D1" target="_blank" class="block bg-gold text-navy px-4 py-2 rounded mt-2 text-center">Book Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4">Rushikesh Jagdale</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gold font-serif italic">Your Partner in Wealth, Growth & Financial Security</p>
+                <p class="text-lg mb-8 max-w-lg">Helping individuals and businesses achieve financial stability through personalized strategies and expert guidance.</p>
+                <a href="https://wa.me/message/PS5MVRQPOOK2D1" target="_blank" class="bg-gold text-navy px-8 py-3 rounded-lg text-lg font-medium hover:bg-opacity-90 transition inline-block">Book a Consultation</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-gold overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Rushikesh Jagdale" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="About Rushikesh Jagdale" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-serif font-bold text-navy mb-6">About Me</h2>
+                    <p class="text-lg mb-6">With years of experience in financial advisory, I, Rushikesh Jagdale, am committed to helping you navigate the complex world of finance with clarity and confidence.</p>
+                    <p class="text-lg mb-6">My approach combines deep industry knowledge with personalized strategies tailored to your unique financial goals and circumstances.</p>
+                    <p class="text-lg">Whether you're an individual seeking to secure your financial future or a business looking to optimize your financial strategy, I provide the expertise and guidance you need to make informed decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy mb-4">My Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive financial solutions tailored to your unique needs and goals.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl border-t-4 border-gold">
+                    <div class="text-gold mb-4">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy mb-3">Financial Planning</h3>
+                    <p class="text-gray-600">Personalized goal-based strategies for long-term wealth creation and security, ensuring your financial future is protected and prosperous.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl border-t-4 border-gold">
+                    <div class="text-gold mb-4">
+                        <i class="fas fa-shield-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy mb-3">Business Risk Management</h3>
+                    <p class="text-gray-600">Protecting businesses with smart risk assessment and management strategies to safeguard your assets and ensure sustainable growth.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl border-t-4 border-gold">
+                    <div class="text-gold mb-4">
+                        <i class="fas fa-piggy-bank text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy mb-3">Mutual Fund Portfolio Review</h3>
+                    <p class="text-gray-600">Tailored reviews to maximize returns and minimize risks, ensuring your investments align with your financial objectives.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl border-t-4 border-gold">
+                    <div class="text-gold mb-4">
+                        <i class="fas fa-umbrella text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy mb-3">Insurance Portfolio Review</h3>
+                    <p class="text-gray-600">Ensuring complete protection with balanced insurance coverage that meets your needs without unnecessary costs.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl border-t-4 border-gold">
+                    <div class="text-gold mb-4">
+                        <i class="fas fa-hand-holding-usd text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy mb-3">Debt Management</h3>
+                    <p class="text-gray-600">Effective repayment and restructuring plans to achieve financial freedom and reduce stress from outstanding liabilities.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-xl border-t-4 border-gold">
+                    <div class="text-gold mb-4">
+                        <i class="fas fa-home text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-navy mb-3">Loans Advisory</h3>
+                    <p class="text-gray-600">Expert guidance on personal, home, and business loan options with the best financial strategy for your situation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section id="why-me" class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-gold mb-4">Why Choose Me</h2>
+                <p class="text-lg max-w-2xl mx-auto">What sets me apart in delivering exceptional financial advisory services.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Reason 1 -->
+                <div class="text-center p-6">
+                    <div class="bg-gold bg-opacity-10 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-handshake text-3xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-3">Transparent & Trustworthy</h3>
+                    <p class="text-gray-300">I believe in complete transparency with no hidden agendas, building long-term relationships based on trust and integrity.</p>
+                </div>
+                
+                <!-- Reason 2 -->
+                <div class="text-center p-6">
+                    <div class="bg-gold bg-opacity-10 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user-cog text-3xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-3">Tailored Solutions</h3>
+                    <p class="text-gray-300">Every client receives customized financial strategies designed specifically for their unique situation and goals.</p>
+                </div>
+                
+                <!-- Reason 3 -->
+                <div class="text-center p-6">
+                    <div class="bg-gold bg-opacity-10 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-award text-3xl text-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-3">Proven Expertise</h3>
+                    <p class="text-gray-300">Years of experience and a track record of success in helping clients achieve their financial objectives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-navy mb-4">Client Testimonials</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Hear what our valued clients have to say about their experience.</p>
+            </div>
+            
+            <div class="relative overflow-hidden">
+                <div id="testimonial-slider" class="flex transition-transform duration-500">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide active-slide min-w-full px-4">
+                        <div class="bg-gray-50 p-8 rounded-lg max-w-3xl mx-auto">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Priya Sharma" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-navy">Priya Sharma</h4>
+                                    <p class="text-gray-600">Business Owner</p>
+                                </div>
+                            </div>
+                            <p class="text-lg italic mb-6">"Rushikesh's financial planning transformed my approach to wealth management. His strategies helped me secure my family's future while growing my business sustainably."</p>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide next-slide min-w-full px-4">
+                        <div class="bg-gray-50 p-8 rounded-lg max-w-3xl mx-auto">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Rahul Mehta" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-navy">Rahul Mehta</h4>
+                                    <p class="text-gray-600">IT Professional</p>
+                                </div>
+                            </div>
+                            <p class="text-lg italic mb-6">"The debt management plan Rushikesh created for me was life-changing. Within two years, I went from struggling with loans to being completely debt-free."</p>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide next-slide min-w-full px-4">
+                        <div class="bg-gray-50 p-8 rounded-lg max-w-3xl mx-auto">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Neha Patel" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-navy">Neha Patel</h4>
+                                    <p class="text-gray-600">Doctor</p>
+                                </div>
+                            </div>
+                            <p class="text-lg italic mb-6">"As someone with limited financial knowledge, I appreciate how Rushikesh explains complex concepts simply. His insurance review saved me 30% on premiums with better coverage."</p>
+                            <div class="text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <button id="prev-testimonial" class="mx-2 text-gold hover:text-opacity-80">
+                        <i class="fas fa-chevron-left text-2xl"></i>
+                    </button>
+                    <button id="next-testimonial" class="mx-2 text-gold hover:text-opacity-80">
+                        <i class="fas fa-chevron-right text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-navy to-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold mb-4">Secure Your Financial Future</h2>
+                <p class="text-xl max-w-2xl mx-auto">Let's discuss how we can work together to achieve your financial goals.</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-gold">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-gold">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-gold">
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-gold text-navy px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Let's Talk Today</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">Rushikesh Jagdale</h3>
+                    <p class="mb-4">Your trusted financial advisor for wealth creation, protection, and growth.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/therushikeshjagdale" target="_blank" class="text-gold hover:text-opacity-80">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gold hover:text-opacity-80">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gold hover:text-opacity-80">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gold hover:text-opacity-80">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">Contact Details</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-gold mt-1 mr-3"></i>
+                            <div>
+                                <p>+91 86 98 53 49 46</p>
+                                <p>+91 94 05 63 08 34</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gold mt-1 mr-3"></i>
+                            <p>rushikesh.jagdale@yahoo.com</p>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold mt-1 mr-3"></i>
+                            <p>Aviva Life Insurance, 2nd Floor, Surya Bhavan, FC Road, Pune – 411001</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-gold transition">About Me</a></li>
+                        <li><a href="#services" class="hover:text-gold transition">Services</a></li>
+                        <li><a href="#why-me" class="hover:text-gold transition">Why Choose Me</a></li>
+                        <li><a href="#testimonials" class="hover:text-gold transition">Testimonials</a></li>
+                        <li><a href="https://wa.me/message/PS5MVRQPOOK2D1" target="_blank" class="text-gold hover:text-opacity-80 transition">Book Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm text-white text-opacity-70">
+                <p>&copy; 2023 Rushikesh Jagdale. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        let currentIndex = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.classList.remove('active-slide', 'prev-slide', 'next-slide');
+                
+                if (i === index) {
+                    testimonial.classList.add('active-slide');
+                } else if (i < index) {
+                    testimonial.classList.add('prev-slide');
+                } else {
+                    testimonial.classList.add('next-slide');
+                }
+            });
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentIndex);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            showTestimonial(currentIndex);
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            showTestimonial(currentIndex);
+        }, 5000);
+        
+        // Form submission to WhatsApp
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            const message = `New Consultation Request:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}`;
+            
+            window.open(`https://wa.me/message/PS5MVRQPOOK2D1?text=${message}`, '_blank');
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
